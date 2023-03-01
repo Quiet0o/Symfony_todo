@@ -6,5 +6,8 @@
 
 
     {{ form(form) }}
+    {% for todo in todos %}
+    <p>todo: {{ todo.text }} date: {{ todo.date|date('d-m-Y') }}</p>
+    {% endfor %}
 
 {% endblock %}

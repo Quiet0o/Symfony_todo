@@ -3,7 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Todo;
+use DateTimeInterface;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -14,7 +16,10 @@ class TodoType extends AbstractType
     {
         $builder
             ->add('text')
-            ->add('date')
+            ->add('date',DateType::class, [
+                'widget' => 'choice',
+                'input'  => 'datetime_immutable'
+            ])
             ->add('save', SubmitType::class)
         ;
     }
