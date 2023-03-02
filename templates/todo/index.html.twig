@@ -1,13 +1,37 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Hello TodoController!{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="templates/todo/index.css"/>
+	stylesheet
+{% endblock %}
+{% block title %}Hello TodoController!
+{% endblock %}
 
 {% block body %}
 
 
-    {{ form(form) }}
-    {% for todo in todos %}
-    <p>todo: {{ todo.text }} date: {{ todo.date|date('d-m-Y') }}</p>
-    {% endfor %}
+	{# {{ form(form) }} #}
+	{{ form_start(form) }}
+
+	{{ form_widget(form.text, {"attr":{'class':"todo-input"}}) }}
+	{{ form_widget(form.submit, {"attr":{'class':"todo-button"}}) }}
+	{{ form_end(form) }}
+	{# <div class="select">
+	        <select name="todos" class="filter-todo">
+	          <option value="all">All</option>
+	          <option value="completed">Completed</option>
+	          <option value="uncompleted">Uncompleted</option>
+	        </select>
+	      </div> #}
+
+	<div class="todo-container">
+		<ul class="todo-list">
+			{% for todo in todos %}
+                <div class="todo">
+                    <li class="todo-item">{{ todo.text }}</li>
+                </div>
+			{% endfor %}
+		</ul>
+	</div>
+
 
 {% endblock %}

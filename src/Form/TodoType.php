@@ -19,8 +19,9 @@ class TodoType extends AbstractType
             ->add('date',DateType::class, [
                 'widget' => 'choice',
                 'input'  => 'datetime_immutable'
+
             ])
-            ->add('save', SubmitType::class)
+            ->add('submit', SubmitType::class)
         ;
     }
 
