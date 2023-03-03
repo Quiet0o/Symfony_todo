@@ -17,9 +17,7 @@ class TodoType extends AbstractType
         $builder
             ->add('text')
             ->add('date',DateType::class, [
-                'widget' => 'choice',
-                'input'  => 'datetime_immutable'
-
+                'widget' => 'single_text',
             ])
             ->add('submit', SubmitType::class)
         ;
