@@ -14,7 +14,7 @@ use Doctrine\ORM\EntityManagerInterface;
 class TodoController extends AbstractController
 {
     #[Route('/', name: 'todos')]
-    public function index(Request $request,EntityManagerInterface $em,TodoRepository $repository): Response
+    public function index(Request $request, EntityManagerInterface $em, TodoRepository $repository): Response
     {
         $todo = new Todo();
 
@@ -25,8 +25,8 @@ class TodoController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $todo = $form->getData();
-            $em -> persist($todo);
-            $em -> flush();
+            $em->persist($todo);
+            $em->flush();
 
             return $this->redirect($request->getUri());
         }
@@ -37,8 +37,9 @@ class TodoController extends AbstractController
             'todos' => $repository->findAll()
         ]);
     }
+
     #[Route('/remove/{id}', name: 'todo_remove')]
-    public function remove(EntityManagerInterface  $em,int $id)
+    public function remove(EntityManagerInterface  $em, int $id)
     {
         $em->remove($em->getRepository(Todo::class)->find($id));
         $em->flush();

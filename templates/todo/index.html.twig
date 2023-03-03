@@ -24,8 +24,8 @@
                     <li class="todo-item">
 						<p class="todo-text">{{ todo.text }}<p>
 						<p class="todo-date ">{{ todo.date |date("m/d/Y")}}</p>
-						 <a href="{{ path('todo_remove',{id: todo.id })}}"><i class="fas fa-check complete-btn"></i></a>
-						<i class="fas fa-trash trash-btn"></i>
+						<i class="fas fa-check complete-btn"></i>
+						<a href="{{ path('todo_remove',{id: todo.id })}}"><i class="fas fa-trash trash-btn"></i></a>
 					</li>
                 </div>
 			{% endfor %}
