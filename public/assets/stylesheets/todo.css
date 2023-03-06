@@ -134,3 +134,7 @@ form button:hover {
 .todo-completed{
   opacity: 0.5;
 }
+.todo-date{
+  margin-left: auto;
+  margin-right: 1em;
+}
