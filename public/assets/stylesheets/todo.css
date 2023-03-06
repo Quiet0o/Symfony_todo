@@ -16,6 +16,11 @@
   box-sizing: border-box;
 }
 
+p{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 body {
   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
   color: white;
@@ -42,9 +47,13 @@ form button {
   border: none;
   background: white;
 }
+
 .date-input {
   font-size: 1rem;
   padding: 1rem;
+}
+.date-input:hover{
+  cursor: pointer;
 }
 form button {
   color: #ff6f47;
@@ -118,3 +127,10 @@ form button:hover {
   cursor: pointer;
 }
 
+.completed {
+  text-decoration: line-through;
+}
+
+.todo-completed{
+  opacity: 0.5;
+}

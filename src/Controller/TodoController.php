@@ -33,7 +33,6 @@ class TodoController extends AbstractController
 
         return $this->render('todo/index.html.twig', [
             'form' => $form->createView(),
-            'controller_name' => 'TodoController',
             'todos' => $repository->findAll()
         ]);
     }
